@@ -57,3 +57,13 @@ gsap.from('.contact-background', {
     duration: 1.2,
      ease: "power1.out"
 });
+
+
+//team_img_wrapper
+
+gsap.from('.team_img_wrapper', {
+    scrollTrigger: ".team_img_wrapper",
+    scale: 0,
+    duration: 2,
+    ease: 'power1.out'
+   })
