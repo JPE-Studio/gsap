@@ -53,7 +53,7 @@ gsap.from('.leistungen-background-div', {
 
 gsap.from('.contact-background', {
     scrollTrigger: '.contact-background',
-    scale: 0,
+    x: -1000,
     duration: 0.5,
      ease: "power1.out"
 });
