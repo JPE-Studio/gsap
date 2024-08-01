@@ -64,6 +64,6 @@ gsap.from('.contact-background', {
 gsap.from('.team_img_wrapper', {
     scrollTrigger: ".team_img_wrapper",
     scale: 0,
-    duration: 2,
+    duration: 0.8,
     ease: 'power1.out'
    })
