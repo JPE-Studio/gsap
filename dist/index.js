@@ -33,6 +33,9 @@ gsap.from('.background_red', {
      ease: "power1.out"
 });
 
+
+
+
 gsap.from('.background_yellow', {
     scrollTrigger: '.background_yellow',
     scale: 0,
@@ -46,4 +49,11 @@ gsap.from('.leistungen-background-div', {
     x: -1500,
     duration: 1,
     ease: "power1.out"
+});
+
+gsap.from('.contact-background', {
+    scrollTrigger: '.contact-background',
+    scale: 0,
+    duration: 0.5,
+     ease: "power1.out"
 });
