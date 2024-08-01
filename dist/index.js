@@ -64,7 +64,8 @@ let scrollTl = gsap.timeline({
         trigger: ".Team", 
         start: "top center", 
         end: "bottom bottom", 
-        markers: true
+        markers: true,
+        scrub: true
     },
 });
 
