@@ -61,7 +61,7 @@ gsap.from('.contact-background', {
 
 let scrollTl = gsap.timeline({
     scrollTrigger: { 
-        trigger: ".Team", 
+        trigger: ".team_layout", 
         start: "top center", 
         end: "bottom bottom", 
         markers: true,
