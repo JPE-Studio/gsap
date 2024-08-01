@@ -29,7 +29,7 @@ gsap.from('.hero_image', {
 gsap.from('.background_red', {
     scrollTrigger: '.background_red',
     scale: 0,
-    duration: 0.5,
+    duration: 2,
      ease: "power1.out"
 });
 
@@ -39,7 +39,7 @@ gsap.from('.background_red', {
 gsap.from('.background_yellow', {
     scrollTrigger: '.background_yellow',
     scale: 0,
-    duration: 0.5,
+    duration: 2,
      ease: "power1.out"
 });
 
@@ -47,13 +47,13 @@ gsap.from('.background_yellow', {
 gsap.from('.leistungen-background-div', {
     scrollTrigger: '.leistungen-background-div',
     x: -1500,
-    duration: 0.2,
+    duration: 2,
     ease: "power1.out"
 });
 
 gsap.from('.contact-background', {
     scrollTrigger: '.contact-background',
     x: 1000,
-    duration: 0.2,
+    duration: 4,
      ease: "power1.out"
 });
