@@ -59,10 +59,8 @@ gsap.from('.contact-background', {
 });
 
 
-//team_img_wrapper
-
 gsap.from('.team_img_wrapper', {
-    scrollTrigger: { trigger: ".Team", start: "top center", end: "bottom bottom" },
+    scrollTrigger: { trigger: ".Team", start: "top center", end: "bottom bottom", markers: true},
     scale: 0,
     duration: 0.8,
     ease: 'power1.out'
