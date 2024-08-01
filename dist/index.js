@@ -47,13 +47,13 @@ gsap.from('.background_yellow', {
 gsap.from('.leistungen-background-div', {
     scrollTrigger: '.leistungen-background-div',
     x: -1500,
-    duration: 1,
+    duration: 0.2,
     ease: "power1.out"
 });
 
 gsap.from('.contact-background', {
     scrollTrigger: '.contact-background',
-    x: -1000,
-    duration: 0.5,
+    x: 1000,
+    duration: 0.2,
      ease: "power1.out"
 });
