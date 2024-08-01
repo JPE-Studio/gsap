@@ -44,7 +44,7 @@ gsap.from('.background_yellow', {
 gsap.from('.leistungen-background-div', {
     scrollTrigger: '.leistungen-background-div',
     x: -1500,
-    duration: 0.8,
+    duration: 2,
     ease: "power1.out"
 });
 
