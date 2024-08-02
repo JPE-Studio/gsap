@@ -25,7 +25,6 @@ gsap.from('.hero_image', {
     ease: "power1.out"
 });
 
-
 gsap.from('.background_red', {
     scrollTrigger: '.background_red',
     scale: 0,
@@ -40,7 +39,6 @@ gsap.from('.background_yellow', {
      ease: "power1.out"
 });
 
-
 gsap.from('.leistungen-background-div', {
     scrollTrigger: '.leistungen-background-div',
     x: -1500,
@@ -54,7 +52,6 @@ gsap.from('.contact-background', {
     duration: 1.2,
      ease: "power1.out"
 });
-
 
 gsap.from('.team_img_wrapper', {
     scrollTrigger: ".team_img_wrapper",
