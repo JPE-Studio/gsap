@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 
 
-
+//hero-paragrah
     $("[block-opacity-delay]").each(function (index) {
       let tl = gsap.timeline({ paused: true });
       tl.to($(this), { opacity: 1, duration: 0.5, ease: "back.out(2)", delay: 1 });
@@ -60,7 +60,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     $("[scale-up]").each(function (index) {
       let tl = gsap.timeline({ paused: true });
-      tl.from($(this), { scale: 0, duration: 0.8, ease: "back.out(2)" });
+      tl.from($(this), { scale: 0, duration: 1, ease: "power2.out" });
       createScrollTrigger($(this), tl);
     });
 
