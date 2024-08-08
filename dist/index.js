@@ -63,8 +63,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 //hero-paragrah
     $("[block-opacity-delay]").each(function (index) {
-      
-  tl.to($(this), { 
+      let tl = gsap.timeline();
+      tl.to($(this), { 
     opacity: 1, 
     duration: 0.5, 
     ease: "back.out(2)", 
