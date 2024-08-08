@@ -29,9 +29,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
   }
 
     $("[words-slide-up-start]").each(function (index) {
-      let tl = gsap.timeline({ paused: true });
-      tl.from($(this).find(".word"), { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
-      
+      let tl = gsap.timeline();
+  tl.from($(this).find(".word"), { 
+    opacity: 0, 
+    yPercent: 100, 
+    duration: 0.5, 
+    ease: "back.out(2)", 
+    stagger: { amount: 0.5 } 
+  });
+  tl.play();
     });
 
     $("[words-slide-up]").each(function (index) {
