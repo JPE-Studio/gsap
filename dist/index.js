@@ -52,7 +52,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     $("[block-opacity-delay]").each(function (index) {
       let tl = gsap.timeline({ paused: true });
-      tl.from($(this), { opacity: 0, duration: 0.5, ease: "back.out(2)", delay: 0.4 });
+      tl.to($(this), { opacity: 1, duration: 0.5, ease: "back.out(2)", delay: 0.4 });
       createScrollTrigger($(this), tl);
     });
 
@@ -120,7 +120,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   
     // Avoid flash of unstyled content
     gsap.set("[text-split]", { opacity: 1 });
-    gsap.set("[opacity-0]", { opacity: 1 });
+    
   });
 
  
