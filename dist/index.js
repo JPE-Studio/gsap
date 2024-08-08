@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     ScrollTrigger.create({
       trigger: triggerElement,
       start: "top 70%",
-      markers: true,
+      markers: false,
       onEnter: () => timeline.play()
     });
   }
@@ -120,6 +120,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   
     // Avoid flash of unstyled content
     gsap.set("[text-split]", { opacity: 1 });
+    gsap.set("[opacity-0]", { opacity: 1 });
   });
 
  
