@@ -1,36 +1,69 @@
 
 
+//Stellt sicher dass die Seite geladen ist bevor der code ausgeführt wird.
 window.addEventListener("DOMContentLoaded", (event) => {
-    // Split text into spans
-    let typeSplit = new SplitType("[text-split]", {
-      types: "words, chars",
-      tagName: "span"
+  // Split text into spans
+  let typeSplit = new SplitType("[text-split]", {
+    types: "words, chars",
+    tagName: "span"
+  });
+
+  // Link timelines to scroll position
+  function createScrollTrigger(triggerElement, timeline) {
+    // Reset tl when scroll out of view past bottom of screen
+    ScrollTrigger.create({
+      trigger: triggerElement,
+      start: "top bottom",
+      onLeaveBack: () => {
+        timeline.progress(0);
+        timeline.pause();
+      }
     });
-  
-    // Link timelines to scroll position
-    function createScrollTrigger(triggerElement, timeline) {
-      // Reset tl when scroll out of view past bottom of screen
-      ScrollTrigger.create({
-        trigger: triggerElement,
-        start: "top bottom",
-        onLeaveBack: () => {
-          timeline.progress(0);
-          timeline.pause();
-        }
-      });
-      // Play tl when scrolled into view (60% from top of screen)
-      ScrollTrigger.create({
-        trigger: triggerElement,
-        start: "top 80%",
-        onEnter: () => timeline.play()
-      });
-    }
-  
+    // Play tl when scrolled into view (60% from top of screen)
+    ScrollTrigger.create({
+      trigger: triggerElement,
+      start: "top 70%",
+      markers: true,
+      onEnter: () => timeline.play()
+    });
+  }
+
     $("[words-slide-up]").each(function (index) {
       let tl = gsap.timeline({ paused: true });
       tl.from($(this).find(".word"), { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
       createScrollTrigger($(this), tl);
     });
+
+    $("[logos-slide-up]").each(function (index) {
+      let tl = gsap.timeline({ paused: true });
+      tl.from($(this).find(".client_logo"), { opacity: 0, yPercent: 100, duration: 0.8, ease: "back.out(2)", stagger: { amount: 0.8 } });
+      createScrollTrigger($(this), tl);
+    });
+
+    $("[items-slide-up]").each(function (index) {
+      let tl = gsap.timeline({ paused: true });
+      tl.from($(this).find(".gsap-item"), { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
+      createScrollTrigger($(this), tl);
+    });
+
+
+
+
+
+    $("[block-opacity-delay]").each(function (index) {
+      let tl = gsap.timeline({ paused: true });
+      tl.from($(this), { opacity: 0, duration: 0.5, ease: "back.out(2)", delay: 0.4 });
+      createScrollTrigger($(this), tl);
+    });
+
+
+
+    $("[scale-up]").each(function (index) {
+      let tl = gsap.timeline({ paused: true });
+      tl.from($(this), { scale: 0, duration: 0.8, ease: "back.out(2)" });
+      createScrollTrigger($(this), tl);
+    });
+
   
     $("[words-rotate-in]").each(function (index) {
       let tl = gsap.timeline({ paused: true });
@@ -59,7 +92,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   
     $("[letters-fade-in]").each(function (index) {
       let tl = gsap.timeline({ paused: true });
-      tl.from($(this).find(".char"), { opacity: 0, duration: 0.2, ease: "power1.out", stagger: { amount: 0.8 } });
+      tl.from($(this).find(".char"), { opacity: 0, duration: 0.4, ease: "power1.out", stagger: { amount: 0.8 } });
       createScrollTrigger($(this), tl);
     });
   
@@ -73,8 +106,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
       createScrollTrigger($(this), tl);
     });
 
-
-  
     $("[scrub-each-word]").each(function (index) {
       let tl = gsap.timeline({
         scrollTrigger: {
@@ -91,61 +122,4 @@ window.addEventListener("DOMContentLoaded", (event) => {
     gsap.set("[text-split]", { opacity: 1 });
   });
 
-  gsap.from('[scale-from-0]', {
-    scrollTrigger: '[scale-from-0]',
-    start: "top 60%",
-    scale: 0,
-    duration: 1.5,
-    ease: "power1.out"
-});
-/*
-gsap.from('.Leistungen-item', {
-    scrollTrigger: 'Leistungen',
-    start: "top 60%",
-    duration: 2,
-    ease: "power1.out",
-    stagger: { amount: 0.4, from: "random" } 
-})
-*/
-// Stellt sicher, dass ScrollTrigger geladen ist
-gsap.registerPlugin(ScrollTrigger);
-
-// Animation für Elemente mit dem Attribut 'stagger-reviel'
-gsap.from('[stagger-reviel]', {
-  scrollTrigger: {
-    trigger: '.leistungen', // Trigger-Element, das die Animation auslöst
-    start: "top 60%", // Startpunkt der Animation
-    toggleActions: "play none none none", // Steuerung der Animation
-    markers: false // Setze auf true, um Debug-Markierungen anzuzeigen
-  },
-  opacity: 0,
-  yPercent: 100,
-  duration: 0.6, // Dauer der Animation pro Element
-  ease: "power1.out", // Ease-Typ
-  stagger: 0.2 // Zeitverzögerung zwischen den Animationen der einzelnen Elemente
-});
-
-
-gsap.from('.team_img_wrapper', {
-    scrollTrigger: {
-        trigger: ".team_img_wrapper",
-        start: "top 60%", // Startpunkt der Animation
-        },
-    scale: 0,
-    duration: 0.6,
-    ease: 'power1.out',
-    stagger: 0.1
-});
-
-gsap.from('.client_logo', {
-    scrollTrigger: {
-      trigger: '.clients', // Trigger-Element, das die Animation auslöst
-      start: "top 60%", // Startpunkt der Animation
-      toggleActions: "play none none none", // Steuerung der Animation
-      markers: false // Setze auf true, um Debug-Markierungen anzuzeigen
-    },
-    opacity: 0,
-    duration: 0.4, // Dauer der Animation pro Element
-    ease: "power1.out", // Ease-Typ
-    stagger: 0.1 // Zeitverzögerung zwischen den Animationen der einzelnen Elemente
-  });
+ 
